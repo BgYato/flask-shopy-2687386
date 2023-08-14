@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Clientes registrados</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>username</th>
+                <th>email</th>
+                <th colspan="2">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td> {{cliente.username}} </td>
+                <td> {{cliente.email}} </td>
+                <td> <a href="clientes/update?id={{cliente.id}}">Actualizar</a> </td>
+                <td> <a href="clientes/create">Eliminar</a> </td>
+            </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+</body>
+</html>
